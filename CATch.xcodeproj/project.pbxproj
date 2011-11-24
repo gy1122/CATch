@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19371719147E576400AB4C10 /* default.xml in Resources */ = {isa = PBXBuildFile; fileRef = 19371718147E576400AB4C10 /* default.xml */; };
 		19A280AA147DEF9100176E6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A280A9147DEF9100176E6C /* UIKit.framework */; };
 		19A280AC147DEF9100176E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A280AB147DEF9100176E6C /* Foundation.framework */; };
 		19A280AE147DEF9100176E6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A280AD147DEF9100176E6C /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19371718147E576400AB4C10 /* default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.xml; sourceTree = "<group>"; };
 		19A280A5147DEF9100176E6C /* CATch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CATch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A280A9147DEF9100176E6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		19A280AB147DEF9100176E6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +64,7 @@
 		19A2809A147DEF9100176E6C = {
 			isa = PBXGroup;
 			children = (
+				19371718147E576400AB4C10 /* default.xml */,
 				19A280AF147DEF9100176E6C /* CATch */,
 				19A280A8147DEF9100176E6C /* Frameworks */,
 				19A280A6147DEF9100176E6C /* Products */,
@@ -180,6 +183,7 @@
 				19A280CA147DEFF300176E6C /* EEfireRon.png in Resources */,
 				19A280CB147DEFF300176E6C /* melonman.png in Resources */,
 				19A280CC147DEFF300176E6C /* melonman2.png in Resources */,
+				19371719147E576400AB4C10 /* default.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

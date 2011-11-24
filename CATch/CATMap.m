@@ -14,13 +14,21 @@
 @synthesize tunnelCount;
 @synthesize boundary;
 @synthesize startPointCount;
+@synthesize bgImage;
 
-- (id) init
+- (id) initWithFile:(NSString *)path
 {
     [super init];
+    
     collisionFrameCount = 0;
     tunnelCount = 0;
     startPointCount = 0;
+    
+    NSError *parseError = nil;
+	NSBundle *bundle = [NSBundle mainBundle];
+    
+    [self parseXMLFileAtURL:[NSURL fileURLWithPath: [bundle pathForResource:path ofType:@"xml"]] parseError:&parseError];
+    
     return self;
 }
 
@@ -133,7 +141,10 @@
 		elementName = qName;
 	}
 	
-	if([elementName isEqualToString:@"bound"]) {
+    if([elementName isEqualToString:@"background"]) {
+		bgImage = [UIImage imageNamed:[attributeDict valueForKey:@"file"]];
+	} 
+	else if([elementName isEqualToString:@"bound"]) {
 		float x = [[attributeDict valueForKey:@"x"] floatValue];
 		float y = [[attributeDict valueForKey:@"y"] floatValue];
         float w = [[attributeDict valueForKey:@"width"] floatValue];

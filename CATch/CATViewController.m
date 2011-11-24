@@ -32,18 +32,18 @@
     accerometer.delegate = self;
     accerometer.updateInterval = kUpdateInterval;
     
-    map = [[CATMap alloc] init];
-    map.boundary = self.view.bounds;
-    [map addFrame:CGRectMake(300, 300, 600, 20)];
-    [map addFrame:CGRectMake(300, 300, 20, 600)];
-    [map addTunnel:CGPointMake(600, 200) outPoint:CGPointMake(600, 800)];
+    map = [[CATMap alloc] initWithFile:@"default"];
+    //map.boundary = self.view.bounds;
+    //[map addFrame:CGRectMake(300, 300, 600, 20)];
+    //[map addFrame:CGRectMake(300, 300, 20, 600)];
+    //[map addTunnel:CGPointMake(600, 200) outPoint:CGPointMake(600, 800)];
     
     RoleNative native = {1, 100, 100, 20.0, nil, nil, nil};
     native.face = [UIImage imageNamed:@"melonman.png"];
     native.motionIdle = [NSArray arrayWithObject:[UIImage imageNamed:@"EEfireRon.png"]];
     native.motionMove = [NSArray arrayWithObjects:[UIImage imageNamed:@"melonman.png"],
                                                   [UIImage imageNamed:@"melonman2.png"],nil];
-    roleMe = [[CATRole alloc] initWithRole:native point:CGPointMake(70.0f, 70.0f) managed:YES];
+    roleMe = [[CATRole alloc] initWithRole:native point:[map getStartPoint:0] managed:YES];
     [self.view addSubview:roleMe.curMotion];
     
     [NSTimer scheduledTimerWithTimeInterval:0.033 target:self selector:@selector(gameLoop) userInfo:nil repeats:YES];

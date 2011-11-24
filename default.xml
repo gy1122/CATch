@@ -1,0 +1,14 @@
+<CATch map="default" author="Tiger Yang">
+    
+    <background file="default"/>
+    
+    <bound x="0" y="0" width="768" height="1000" />
+    
+    <block x="250" y="250" width="500" height="20" />
+    <block x="250" y="250" width="20" height="500" />
+    
+    <tunnel inX="600" inY="200" outX="600" outY="800" />
+    
+    <player x="70" y="70" />
+    
+</CATch>

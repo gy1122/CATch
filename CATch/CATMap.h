@@ -26,12 +26,17 @@ typedef struct {
     
     CGPoint startPoints[kStartPointCount];
     int     startPointCount;
+    
+    UIImage *bgImage;
 }
 
 @property(nonatomic) CGRect boundary;
 @property(nonatomic) int collisionFrameCount;
 @property(nonatomic) int tunnelCount;
 @property(nonatomic) int startPointCount;
+@property(nonatomic, retain) UIImage *bgImage;
+
+- (id) initWithFile:(NSString *)path;
 
 - (void) addFrame:(CGRect)rect;
 - (void) addTunnel:(CGPoint)inPoint outPoint:(CGPoint)outPoint;
