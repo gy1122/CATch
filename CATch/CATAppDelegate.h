@@ -2,7 +2,7 @@
 //  CATAppDelegate.h
 //  CATch
 //
-//  Created by Tiger Yang on 2011/11/24.
+//  Created by Tiger Yang on 2011/11/22.
 //  Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
 //
 

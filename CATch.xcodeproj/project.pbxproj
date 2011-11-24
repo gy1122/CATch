@@ -12,9 +12,14 @@
 		19A280AE147DEF9100176E6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A280AD147DEF9100176E6C /* CoreGraphics.framework */; };
 		19A280B4147DEF9100176E6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19A280B2147DEF9100176E6C /* InfoPlist.strings */; };
 		19A280B6147DEF9100176E6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280B5147DEF9100176E6C /* main.m */; };
-		19A280BA147DEF9100176E6C /* CATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280B9147DEF9100176E6C /* CATAppDelegate.m */; };
-		19A280BD147DEF9100176E6C /* CATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280BC147DEF9100176E6C /* CATViewController.m */; };
 		19A280C0147DEF9100176E6C /* CATViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A280BE147DEF9100176E6C /* CATViewController.xib */; };
+		19A280CA147DEFF300176E6C /* EEfireRon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A280C7147DEFF300176E6C /* EEfireRon.png */; };
+		19A280CB147DEFF300176E6C /* melonman.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A280C8147DEFF300176E6C /* melonman.png */; };
+		19A280CC147DEFF300176E6C /* melonman2.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A280C9147DEFF300176E6C /* melonman2.png */; };
+		19A280D2147DF08400176E6C /* CATMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280CD147DF08400176E6C /* CATMap.m */; };
+		19A280D3147DF08400176E6C /* CATRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280CF147DF08400176E6C /* CATRole.m */; };
+		19A280D4147DF08400176E6C /* CATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280D1147DF08400176E6C /* CATViewController.m */; };
+		19A280D7147DF08D00176E6C /* CATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280D6147DF08D00176E6C /* CATAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +27,22 @@
 		19A280A9147DEF9100176E6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		19A280AB147DEF9100176E6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19A280AD147DEF9100176E6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		19A280B1147DEF9100176E6C /* CATch-Info.plist */ = {isa = PBXFileReference; path = "CATch-Info.plist"; sourceTree = "<group>"; };
+		19A280B1147DEF9100176E6C /* CATch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CATch-Info.plist"; sourceTree = "<group>"; };
 		19A280B3147DEF9100176E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19A280B5147DEF9100176E6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		19A280B7147DEF9100176E6C /* CATch-Prefix.pch */ = {isa = PBXFileReference; path = "CATch-Prefix.pch"; sourceTree = "<group>"; };
-		19A280B8147DEF9100176E6C /* CATAppDelegate.h */ = {isa = PBXFileReference; path = CATAppDelegate.h; sourceTree = "<group>"; };
-		19A280B9147DEF9100176E6C /* CATAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATAppDelegate.m; sourceTree = "<group>"; };
-		19A280BB147DEF9100176E6C /* CATViewController.h */ = {isa = PBXFileReference; path = CATViewController.h; sourceTree = "<group>"; };
-		19A280BC147DEF9100176E6C /* CATViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATViewController.m; sourceTree = "<group>"; };
+		19A280B7147DEF9100176E6C /* CATch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CATch-Prefix.pch"; sourceTree = "<group>"; };
 		19A280BF147DEF9100176E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CATViewController.xib; sourceTree = "<group>"; };
+		19A280C7147DEFF300176E6C /* EEfireRon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EEfireRon.png; sourceTree = "<group>"; };
+		19A280C8147DEFF300176E6C /* melonman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = melonman.png; sourceTree = "<group>"; };
+		19A280C9147DEFF300176E6C /* melonman2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = melonman2.png; sourceTree = "<group>"; };
+		19A280CD147DF08400176E6C /* CATMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATMap.m; sourceTree = "<group>"; };
+		19A280CE147DF08400176E6C /* CATRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATRole.h; sourceTree = "<group>"; };
+		19A280CF147DF08400176E6C /* CATRole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATRole.m; sourceTree = "<group>"; };
+		19A280D0147DF08400176E6C /* CATViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATViewController.h; sourceTree = "<group>"; };
+		19A280D1147DF08400176E6C /* CATViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATViewController.m; sourceTree = "<group>"; };
+		19A280D5147DF08D00176E6C /* CATAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATAppDelegate.h; sourceTree = "<group>"; };
+		19A280D6147DF08D00176E6C /* CATAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATAppDelegate.m; sourceTree = "<group>"; };
+		19A280D8147DF09600176E6C /* CATMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATMap.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +89,15 @@
 		19A280AF147DEF9100176E6C /* CATch */ = {
 			isa = PBXGroup;
 			children = (
-				19A280B8147DEF9100176E6C /* CATAppDelegate.h */,
-				19A280B9147DEF9100176E6C /* CATAppDelegate.m */,
-				19A280BB147DEF9100176E6C /* CATViewController.h */,
-				19A280BC147DEF9100176E6C /* CATViewController.m */,
+				19A280D5147DF08D00176E6C /* CATAppDelegate.h */,
+				19A280D6147DF08D00176E6C /* CATAppDelegate.m */,
+				19A280D8147DF09600176E6C /* CATMap.h */,
+				19A280CD147DF08400176E6C /* CATMap.m */,
+				19A280CE147DF08400176E6C /* CATRole.h */,
+				19A280CF147DF08400176E6C /* CATRole.m */,
+				19A280D0147DF08400176E6C /* CATViewController.h */,
+				19A280D1147DF08400176E6C /* CATViewController.m */,
+				19A280C6147DEFD900176E6C /* Image */,
 				19A280BE147DEF9100176E6C /* CATViewController.xib */,
 				19A280B0147DEF9100176E6C /* Supporting Files */,
 			);
@@ -96,6 +113,16 @@
 				19A280B7147DEF9100176E6C /* CATch-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19A280C6147DEFD900176E6C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				19A280C7147DEFF300176E6C /* EEfireRon.png */,
+				19A280C8147DEFF300176E6C /* melonman.png */,
+				19A280C9147DEFF300176E6C /* melonman2.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +177,9 @@
 			files = (
 				19A280B4147DEF9100176E6C /* InfoPlist.strings in Resources */,
 				19A280C0147DEF9100176E6C /* CATViewController.xib in Resources */,
+				19A280CA147DEFF300176E6C /* EEfireRon.png in Resources */,
+				19A280CB147DEFF300176E6C /* melonman.png in Resources */,
+				19A280CC147DEFF300176E6C /* melonman2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A280B6147DEF9100176E6C /* main.m in Sources */,
-				19A280BA147DEF9100176E6C /* CATAppDelegate.m in Sources */,
-				19A280BD147DEF9100176E6C /* CATViewController.m in Sources */,
+				19A280D2147DF08400176E6C /* CATMap.m in Sources */,
+				19A280D3147DF08400176E6C /* CATRole.m in Sources */,
+				19A280D4147DF08400176E6C /* CATViewController.m in Sources */,
+				19A280D7147DF08D00176E6C /* CATAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +271,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CATch/CATch-Prefix.pch";
 				INFOPLIST_FILE = "CATch/CATch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -250,6 +283,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CATch/CATch-Prefix.pch";
 				INFOPLIST_FILE = "CATch/CATch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
