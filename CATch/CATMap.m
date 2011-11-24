@@ -13,12 +13,14 @@
 @synthesize collisionFrameCount;
 @synthesize tunnelCount;
 @synthesize boundary;
+@synthesize startPointCount;
 
 - (id) init
 {
     [super init];
     collisionFrameCount = 0;
     tunnelCount = 0;
+    startPointCount = 0;
     return self;
 }
 
@@ -39,6 +41,19 @@
     tunnel[tunnelCount].outPoint = outPoint;
     tunnelCount++;
 }
+
+- (void) addStartPoint:(CGPoint)point
+{
+    startPoints[startPointCount] = point;
+    startPointCount++;
+}
+
+- (CGPoint) getStartPoint:(int)i
+{
+    return startPoints[i];
+}
+
+#pragma mark - Related to moving
 
 - (BOOL) checkCollisionX:(CGRect)rect left:(BOOL)l
 {
@@ -84,6 +99,73 @@
             return tunnel[i].outPoint;
     }
     return CGPointMake(-1, -1);
+}
+
+#pragma mark - Map loading
+
+//
+// load a game level
+//
+-(BOOL)parseXMLFileAtURL:(NSURL *)file parseError:(NSError **)error {
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:file];
+	// we'll do the parsing
+	[parser setDelegate:self];
+	[parser setShouldProcessNamespaces:NO];
+	[parser setShouldReportNamespacePrefixes:NO];
+	[parser setShouldResolveExternalEntities:NO];
+	[parser parse];
+	
+	NSError *parseError = [parser parserError];
+	if(parseError && error) {
+		*error = parseError;
+	}
+	
+	[parser release];
+	
+	return (parseError) ? YES : NO; 
+}
+
+//
+// the XML parser calls here with all the elements for the level
+//
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+	if(qName) {
+		elementName = qName;
+	}
+	
+	if([elementName isEqualToString:@"bound"]) {
+		float x = [[attributeDict valueForKey:@"x"] floatValue];
+		float y = [[attributeDict valueForKey:@"y"] floatValue];
+        float w = [[attributeDict valueForKey:@"width"] floatValue];
+        float h = [[attributeDict valueForKey:@"height"] floatValue];
+        boundary = CGRectMake(x, y, w, h);
+	} 
+    else if([elementName isEqualToString:@"block"]) {
+		float x = [[attributeDict valueForKey:@"x"] floatValue];
+		float y = [[attributeDict valueForKey:@"y"] floatValue];
+        float w = [[attributeDict valueForKey:@"width"] floatValue];
+        float h = [[attributeDict valueForKey:@"height"] floatValue];
+		[self addFrame:CGRectMake(x, y, w, h)];
+	}
+    else if([elementName isEqualToString:@"tunnel"]) {
+		float inx = [[attributeDict valueForKey:@"inX"] floatValue];
+		float iny = [[attributeDict valueForKey:@"inY"] floatValue];
+        float outx = [[attributeDict valueForKey:@"outX"] floatValue];
+        float outy = [[attributeDict valueForKey:@"outY"] floatValue];
+		[self addTunnel:CGPointMake(inx, iny) outPoint:CGPointMake(outx, outy)];
+	}
+	else if([elementName isEqualToString:@"player"]) {
+		float x = [[attributeDict valueForKey:@"x"] floatValue];
+		float y = [[attributeDict valueForKey:@"y"] floatValue];
+        [self addStartPoint:CGPointMake(x, y)];
+	} 
+}
+
+//
+// the level did not load, file not found, etc.
+//
+-(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError{
+	NSLog(@"Error on XML Parse: %@", [parseError localizedDescription] );
 }
 
 @end
