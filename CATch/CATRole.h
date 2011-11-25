@@ -16,6 +16,7 @@ typedef enum {
     PLAYER_STATE_GHOST = 2
 } PlayerStateFlag;
 
+// PlayerInfo is information to be sent to peers.
 typedef struct {
     CGPoint     position;
     CGFloat     rotation;
@@ -27,6 +28,7 @@ typedef struct {
     int         height;
     int         weight;
     float       maxSpeed;
+    float       accTune;
     
     UIImage     *face;
     NSArray     *motionIdle;
@@ -34,7 +36,6 @@ typedef struct {
 } RoleNative;
 
 @interface CATRole : NSObject {
-    BOOL            managed;        // Whether the player is managed on this device
     RoleNative      native;
     PlayerInfo      info;
     
@@ -56,14 +57,18 @@ typedef struct {
 @property(nonatomic) CGPoint        newPoint;
 @property(nonatomic, retain) UIImageView    *curMotion;
 
-- (id) initWithRole:(RoleNative)n point:(CGPoint)p managed:(BOOL)m;
+- (id) initWithRole:(RoleNative)n;
 
 - (void) setState:(PlayerStateFlag)state;
 - (void) resetState:(PlayerStateFlag)state;
 
 - (void) calcNextPoint:(UIAcceleration *)acc;
 - (void) update;
+- (void) updateWithInfo:(PlayerInfo)newInfo;
 
 - (float) getBound;
+
++ (CATRole *)roleMelonman;
++ (CATRole *)roleFireRon;
 
 @end

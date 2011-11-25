@@ -7,20 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CATMap.h"
-#import "CATRole.h"
+
+@class CATMap;
+@class CATRole;
+@class CATGameController;
 
 @interface CATViewController : UIViewController <UIAccelerometerDelegate> {
     UIAcceleration      *acc;
-    CATMap              *map;
-    CATRole             *roleMe;
-    CATRole             *roleOpp;
+    NSTimer             *timer;
+    
+    CATGameController   *gameController;
 }
 
 @property(nonatomic, retain) UIAcceleration *acc;
 
 - (void)gameLoop;
-- (void)getMyNextPosition;
 
 @end
 

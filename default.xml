@@ -2,13 +2,17 @@
     
     <background file="default"/>
     
-    <bound x="0" y="0" width="768" height="1000" />
+    <bound x="0" y="0" width="1024" height="750" />
     
-    <block x="250" y="250" width="500" height="20" />
-    <block x="250" y="250" width="20" height="500" />
+    <block x="150" y="0" width="20" height="600" />
+    <block x="320" y="0" width="20" height="600" />
+    <block x="490" y="0" width="20" height="600" />
+    <block x="660" y="0" width="20" height="600" />
+    <block x="830" y="0" width="20" height="600" />
     
-    <tunnel inX="600" inY="200" outX="600" outY="800" />
+    <tunnel inX="400" inY="80" outX="700" outY="50" />
     
-    <player x="70" y="70" />
+    <player x="70" y="170" />
+    <player x="900" y="600" />
     
 </CATch>

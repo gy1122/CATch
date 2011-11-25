@@ -17,13 +17,11 @@
 @synthesize newPoint;
 @synthesize curMotion;
 
-- (id) initWithRole:(RoleNative)n point:(CGPoint)p managed:(BOOL)m
+- (id) initWithRole:(RoleNative)n
 {
-    managed = m;
-    
     native = n;
-    info.position = p;
-    info.rotation = -1;
+    info.position = CGPointMake(0.0f, 0.0f);
+    info.rotation = 0;
     info.state = PLAYER_STATE_NONE;
     
     vSpeed = 0.0f;
@@ -31,8 +29,11 @@
     
     CGRect imageRect = CGRectMake(info.position.x, info.position.y, native.weight, native.height);
     curMotion = [[UIImageView alloc] initWithFrame:imageRect];
-    curMotion.image = [native.motionIdle objectAtIndex:0];
-    [curMotion sizeThatFits:CGSizeMake(native.weight, native.height)];
+    curMotion.opaque = NO;
+    curMotion.image = [native.motionMove objectAtIndex:0];
+    curMotion.backgroundColor = [UIColor clearColor];
+    curMotion.contentMode = UIViewContentModeScaleAspectFit;
+    curMotion.center = info.position;
     animationIndex = 0;
     
     [native.face retain];
@@ -57,6 +58,8 @@
     [super dealloc];
 }
 
+#pragma mark - State modifications
+
 - (void) setState:(PlayerStateFlag)state
 {
     info.state = info.state|state;
@@ -67,13 +70,15 @@
     info.state = info.state&(~state);
 }
 
+#pragma mark - Move related
+
 - (void) calcNextPoint:(UIAcceleration *)acc
 {
     //curMotion.transform = CGAffineTransformMakeRotation(atan2f(acc.x, acc.y));
-    info.rotation = atan2f(acc.x, acc.y);
+    info.rotation = atan2f(acc.y, -acc.x);
     
-    hSpeed += acc.x;
-    vSpeed -= acc.y;
+    hSpeed += acc.y * native.accTune;
+    vSpeed += acc.x * native.accTune;
     
     if (hSpeed >  native.maxSpeed) hSpeed =  native.maxSpeed;
     if (hSpeed < -native.maxSpeed) hSpeed = -native.maxSpeed;
@@ -94,10 +99,51 @@
     curMotion.transform = CGAffineTransformMakeRotation(info.rotation);
 }
 
+- (void) updateWithInfo:(PlayerInfo)newInfo
+{
+    self.info = newInfo;
+    [self update];
+}
+
 - (float) getBound
 {
     // return sqrt((native.weight)*(native.weight) + (native.height)*(native.height))/2.0;
     return native.weight/2;
+}
+
+#pragma mark - Roles with native;
+
++ (CATRole *)roleMelonman
+{
+    RoleNative native;
+    native.roleId = 1;
+    native.weight = 100;
+    native.height = 100;
+    native.maxSpeed = 20.0f;
+    native.accTune = 1.5f;
+    native.face = [UIImage imageNamed:@"melonman.png"];
+    native.motionIdle = [NSArray arrayWithObject:[UIImage imageNamed:@"melonman.png"]];
+    native.motionMove = [NSArray arrayWithObjects:[UIImage imageNamed:@"melonman.png"],
+                         [UIImage imageNamed:@"melonman2.png"],nil];
+    CATRole *role = [[CATRole alloc] initWithRole:native];
+    
+    return role;
+}
+
++ (CATRole *)roleFireRon
+{
+    RoleNative native;
+    native.roleId = 1;
+    native.weight = 100;
+    native.height = 100;
+    native.maxSpeed = 20.0f;
+    native.accTune = 1.5f;
+    native.face = [UIImage imageNamed:@"EEfireRon.png"];
+    native.motionIdle = [NSArray arrayWithObject:[UIImage imageNamed:@"EEfireRon.png"]];
+    native.motionMove = [NSArray arrayWithObject:[UIImage imageNamed:@"EEfireRon.png"]];
+    CATRole *role = [[CATRole alloc] initWithRole:native];
+    
+    return role;
 }
 
 @end

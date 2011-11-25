@@ -21,9 +21,13 @@
 		19A280D3147DF08400176E6C /* CATRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280CF147DF08400176E6C /* CATRole.m */; };
 		19A280D4147DF08400176E6C /* CATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280D1147DF08400176E6C /* CATViewController.m */; };
 		19A280D7147DF08D00176E6C /* CATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A280D6147DF08D00176E6C /* CATAppDelegate.m */; };
+		19CA67AC147F905E003B2D5A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CA67AB147F905E003B2D5A /* GameKit.framework */; };
+		19CA67B0147F97F5003B2D5A /* CATGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA67AF147F97F5003B2D5A /* CATGameController.m */; };
+		19CA67B3147F99EF003B2D5A /* CATUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA67B2147F99EF003B2D5A /* CATUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19223B4A147E846100E67B1B /* CATMap2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATMap2.h; sourceTree = "<group>"; };
 		19371718147E576400AB4C10 /* default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.xml; sourceTree = "<group>"; };
 		19A280A5147DEF9100176E6C /* CATch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CATch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A280A9147DEF9100176E6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -45,6 +49,11 @@
 		19A280D5147DF08D00176E6C /* CATAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATAppDelegate.h; sourceTree = "<group>"; };
 		19A280D6147DF08D00176E6C /* CATAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATAppDelegate.m; sourceTree = "<group>"; };
 		19A280D8147DF09600176E6C /* CATMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATMap.h; sourceTree = "<group>"; };
+		19CA67AB147F905E003B2D5A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		19CA67AE147F97F5003B2D5A /* CATGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATGameController.h; sourceTree = "<group>"; };
+		19CA67AF147F97F5003B2D5A /* CATGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATGameController.m; sourceTree = "<group>"; };
+		19CA67B1147F99EF003B2D5A /* CATUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATUtil.h; sourceTree = "<group>"; };
+		19CA67B2147F99EF003B2D5A /* CATUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19CA67AC147F905E003B2D5A /* GameKit.framework in Frameworks */,
 				19A280AA147DEF9100176E6C /* UIKit.framework in Frameworks */,
 				19A280AC147DEF9100176E6C /* Foundation.framework in Frameworks */,
 				19A280AE147DEF9100176E6C /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +92,7 @@
 		19A280A8147DEF9100176E6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19CA67AB147F905E003B2D5A /* GameKit.framework */,
 				19A280A9147DEF9100176E6C /* UIKit.framework */,
 				19A280AB147DEF9100176E6C /* Foundation.framework */,
 				19A280AD147DEF9100176E6C /* CoreGraphics.framework */,
@@ -96,10 +107,15 @@
 				19A280D6147DF08D00176E6C /* CATAppDelegate.m */,
 				19A280D8147DF09600176E6C /* CATMap.h */,
 				19A280CD147DF08400176E6C /* CATMap.m */,
+				19223B4A147E846100E67B1B /* CATMap2.h */,
 				19A280CE147DF08400176E6C /* CATRole.h */,
 				19A280CF147DF08400176E6C /* CATRole.m */,
+				19CA67AE147F97F5003B2D5A /* CATGameController.h */,
+				19CA67AF147F97F5003B2D5A /* CATGameController.m */,
 				19A280D0147DF08400176E6C /* CATViewController.h */,
 				19A280D1147DF08400176E6C /* CATViewController.m */,
+				19CA67B1147F99EF003B2D5A /* CATUtil.h */,
+				19CA67B2147F99EF003B2D5A /* CATUtil.m */,
 				19A280C6147DEFD900176E6C /* Image */,
 				19A280BE147DEF9100176E6C /* CATViewController.xib */,
 				19A280B0147DEF9100176E6C /* Supporting Files */,
@@ -199,6 +215,8 @@
 				19A280D3147DF08400176E6C /* CATRole.m in Sources */,
 				19A280D4147DF08400176E6C /* CATViewController.m in Sources */,
 				19A280D7147DF08D00176E6C /* CATAppDelegate.m in Sources */,
+				19CA67B0147F97F5003B2D5A /* CATGameController.m in Sources */,
+				19CA67B3147F99EF003B2D5A /* CATUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
